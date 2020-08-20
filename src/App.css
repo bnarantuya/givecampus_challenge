@@ -1,7 +1,26 @@
-.App {
+
+.content {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.add {
+  display: grid;
+  grid-template-columns: 20px auto;
+  border: 1px solid #a7ffb6;
+  margin: 8px;
+  padding: 8px;
+  color: #0a950a;
+  cursor: pointer;
+}
+.add div {
+  align-self: center;
+}
+.add svg {
+  fill: #0a950a;
+}
+.add:hover {
+  border-color: green;
 }
 button {
   border: none;
@@ -20,9 +39,15 @@ button {
   display: grid;
   grid-template-columns: 40px auto 100px 40px;
   width: 400px;
-  border: 1px solid black;
+  border: 1px solid #c2c2c2;
   padding: 5px;
   margin: 5px;
+  box-shadow: 0px 0px 1px 0px #888888;
+  animation: fade-in .5s ease-in;
+}
+
+.ListItem:hover {
+  border-color: #5b5b5b;
 }
 
 .ListItem div {
@@ -59,6 +84,7 @@ button {
 
 .ListItem.Completed {
   background-color: #d1f3d1;
+  border-color: green;
 }
 .Popup {
   position: fixed; /* Stay in place */
@@ -72,15 +98,48 @@ button {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .Popup .addNew {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 250px;
+  height: 200px;
+}
+.Popup .addNew .userName {
+  height: 2em;
+  padding: 4px;
+  margin: 8px;
+  width: 200px;
+}
+.Popup .addNew .datePicker {
+  height: 2em;
+  padding: 4px;
+  margin: 8px;
+  width: 200px;
+}
+
+.Popup .addNew .addItem {
+  border: 1px solid #a7ffb6;
+  margin: 8px;
+  padding: 8px;
+  width: 100px;
+  color: #0a950a;
+  cursor: pointer;
+}
+
+.Popup .addNew .addItem:hover {
+  border-color: #41fc61;
 }
 .Popup .addNew .close {
+  position: relative;
+  top: -20px;
+  right: -120px;
   color: #aaaaaa;
-  float: right;
+  /* float: right; */
   font-size: 28px;
   font-weight: bold;
 }
@@ -89,4 +148,13 @@ button {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
